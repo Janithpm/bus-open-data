@@ -1,7 +1,7 @@
 import sqlite3
 import datetime
 
-def insertLocation(data_list):
+def insert_location(data_list):
     conn = sqlite3.connect('bus_data.db')
     c = conn.cursor()
     sql = '''INSERT INTO Location (
@@ -49,7 +49,7 @@ def insertLocation(data_list):
     finally:
         conn.close()
 
-def insertLocationLogs(data):
+def insert_location_logs(data):
     conn = sqlite3.connect('bus_data.db')
     c = conn.cursor()
     sql = '''INSERT INTO LocationLogs (
