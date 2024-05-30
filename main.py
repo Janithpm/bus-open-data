@@ -1,10 +1,11 @@
-# import json
 from location import getLocationData, parse_location_xml
 from timetable import getTimetableData
 from sqlite import insertLocation, insertLocationLogs
+import time
 
 def main():
-    datafeedId = 14480
+    # 14480, 14769, 14656
+    datafeedId = 14656
     datasetId = 2023
 
     xml_data = getLocationData(datafeedId)
@@ -22,5 +23,17 @@ def main():
     with open('data/timetable.json', 'w') as tf:
         tf.write(timetable)
 
-if __name__ == "__main__":
+total_duration = 10
+interval = 10
+
+iterations = total_duration // interval
+
+for i in range(iterations):
+    print(f"Start Iteration {i + 1} of {iterations}")
     main()
+    print("Done with iteration. Sleeping...")
+    time.sleep(interval)
+
+print("Finished executing the script.")
+
+    
