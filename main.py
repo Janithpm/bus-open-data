@@ -1,11 +1,11 @@
 # import json
 # from location import getLocationData, parse_location_xml
-# from timetable import getTimetableData
+from timetable import getTimetableData
 # from sqlite import insertLocation, insertLocationLogs
 from location import Location
 
 def main():
-    datafeedId = 14472
+    datafeedId = 14348
     datasetId = 2023
 
     location = Location(datafeedId)
@@ -24,9 +24,9 @@ def main():
     #     'VehicleActivities': len(locationData.get('VehicleActivity', []))
     # })
     
-    # timetable = getTimetableData(datasetId)
-    # with open('data/timetable.json', 'w') as tf:
-    #     tf.write(timetable)
+    timetable = getTimetableData(datasetId)
+    with open('data/timetable.json', 'w') as tf:
+        tf.write(timetable)
 
 if __name__ == "__main__":
     main()
