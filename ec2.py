@@ -26,7 +26,7 @@ console_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 logger.addHandler(console_handler)
 
-Number_of_days = 3
+Number_of_days = 1
 start_time = time.time()
 end_time = start_time + Number_of_days * 24 * 60 * 60
 
@@ -166,7 +166,7 @@ def parse_location_xml(xml_data):
 
 def main():
     try:
-        xml_data = fetchData(f"https://data.bus-data.dft.gov.uk/api/v1/datafeed?boundingBox=-1.360495,53.824031,-2.382224,53.428220")
+        xml_data = fetchData(f"https://data.bus-data.dft.gov.uk/api/v1/datafeed?boundingBox=-1.5212,53.6389,-1.8206,53.8192")
         locationData = parse_location_xml(xml_data)
         insertLocation(locationData.get('VehicleActivity', []))
         insertLocationLogs({
