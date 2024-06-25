@@ -19,14 +19,15 @@ def main():
         'VehicleActivities': len(locationData.get('VehicleActivity', []))
     })
     
-    timetable = getTimetableData(datasetId)
-    with open('data/timetable.json', 'w') as tf:
-        tf.write(timetable)
+    # timetable = getTimetableData(datasetId)
+    # with open('data/timetable.json', 'w') as tf:
+    #     tf.write(timetable)
+
 
 total_duration = 10
 interval = 10
 
-iterations = total_duration // interval
+iterations = 10
 
 for i in range(iterations):
     print(f"Start Iteration {i + 1} of {iterations}")

@@ -2,8 +2,8 @@ import xml.etree.ElementTree as ET
 from Xml import getName, getText, typeCast, compare, find
 from bus_API import fetchData
 
-def getLocationData(datafeedId):
-    url = f"https://data.bus-data.dft.gov.uk/api/v1/datafeed/{datafeedId}"
+def getLocationData(datafeedId = ""):
+    url = f"https://data.bus-data.dft.gov.uk/api/v1/datafeed?boundingBox=-1.360495,53.824031,-2.382224,53.428220"
     return fetchData(url)
     
     
